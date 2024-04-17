@@ -1,1 +1,1 @@
-"# Sudoku-Solver" 
+Developed a Python-based Sudoku solver with Pygame, featuring an intuitive interface and dynamic board generation via a Sudoku API. Employed recursive backtracking algorithm for efficient puzzle solving, ensuring a seamless and engaging user experience. 

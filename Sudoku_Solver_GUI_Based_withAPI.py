@@ -1,28 +1,11 @@
 import pygame
 pygame.font.init()
 
-import requests
-
-url = "https://sudoku-generator3.p.rapidapi.com/generate"
-
-payload = {
-	"difficulty": "hard",
-	"spaces": ".",
-	"candidates": True,
-	"list": False,
-	"grid": True
-}
-headers = {
-	"content-type": "application/json",
-	"X-RapidAPI-Key": "d6aea4a5a0msh62b897a578090bcp14e351jsn5491467e9233",
-	"X-RapidAPI-Host": "sudoku-generator3.p.rapidapi.com"
-}
+from sudoku_api import fetch_sudoku_board
 
 class Grid:
-    response = requests.post(url, json=payload, headers=headers)
-
-    whole_dict = response.json()
-    board = whole_dict["grid"]
+    # get the board from the api file
+    board = fetch_sudoku_board()
 
     def convert_board(str_board):
         for i in range(9):
